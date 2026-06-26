@@ -21,3 +21,6 @@ class Entry:
         print(f"Username: {result['Username']}")
 
         return Entry(site=result['Website'], pword=result['Password'], email=result['Email'], uname=result['Username'])
+    
+    def __str__(self):
+        return print(self)
