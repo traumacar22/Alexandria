@@ -23,4 +23,4 @@ class Entry:
         return Entry(site=result['Website'], pword=result['Password'], email=result['Email'], uname=result['Username'])
     
     def __str__(self):
-        return print(self)
+        return f"Website: {self.site}, Password: {self.pword}, Email: {self.email}, Username: {self.uname}"

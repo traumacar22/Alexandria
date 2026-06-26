@@ -14,8 +14,11 @@ def save_entry(new_list: list[Entry]):
 
 def load_entry():
     loaded_list: list[Entry] = []
-    with open("safe/vault.json", 'r') as vault:
-        data = json.load(vault)
+    try:
+        with open("safe/vault.json", 'r') as vault:
+            data = json.load(vault)
+    except (json.JSONDecodeError, FileNotFoundError):
+        return []
     for entry in data:
         loaded_list.append(Entry.from_dict(entry))
     return loaded_list
