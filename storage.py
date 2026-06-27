@@ -22,7 +22,7 @@ def load_entry(fernet):
             Fer = fernet.decrypt(vault.read())
             data = json.loads(Fer)
             
-    except (json.JSONDecodeError, FileNotFoundError, InvalidToken):
+    except (json.JSONDecodeError, FileNotFoundError):
         return []
     for entry in data:
         loaded_list.append(Entry.from_dict(entry))
