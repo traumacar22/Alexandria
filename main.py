@@ -54,8 +54,8 @@ else:
 
 #menu loop
 while True:
-    response = input("1) Add entry, 2) View entries, or 3) Quit?")
-    if response == "3":
+    response = input("1) Add entry, 2) View entries, 3) Search for an entry? or 4) Quit?")
+    if response == "4":
         sys.exit()
     elif response == "1":
         site = input("What Website or service is this login is for?") 
@@ -68,5 +68,14 @@ while True:
     elif response == "2":
         for entry in entries: 
             print(entry)
+    elif response == "3":
+        search = input("What website do you want to search for?")
+        found = False
+        for entry in entries:
+            if search.lower() in entry.site.lower():
+                found = True
+                print(entry)
+        if found == False:
+            print("Website not found")
     else:
         print("input not recognized")

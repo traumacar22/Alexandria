@@ -14,12 +14,6 @@ class Entry:
     
     @staticmethod
     def from_dict(result: dict):
-        #print commands are for troubleshooting later and should be removed when satisfied
-        print(f"Website: {result['Website']}")
-        print(f"Password: {result['Password']}")
-        print(f"Email: {result['Email']}")
-        print(f"Username: {result['Username']}")
-
         return Entry(site=result['Website'], pword=result['Password'], email=result['Email'], uname=result['Username'])
     
     def __str__(self):
